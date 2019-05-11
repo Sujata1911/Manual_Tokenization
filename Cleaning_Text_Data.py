@@ -1,7 +1,7 @@
 #Cleaning Data Manually
 
 #load text
-fiename = 'metamorphosis_clean.txt'
+filename = 'metamorphosis_clean.txt'
 file = open(filename, 'rt')
 text = file.read()
 file.close()
@@ -9,7 +9,7 @@ file.close()
 #Tokenization
 #(i) Split by whitespaces
 #problems: "wasn't" "dream." "room," - punctuations still there
-#words = text.split()
+words = text.split()
 #print(words[:100])
 
 #(ii) Split by words
@@ -21,7 +21,7 @@ file.close()
 #(iii) split by whitespaces and remove punctuations
 #problem solved as: "wasnt"
 import string
-table = str.maketrans('','',string.pinctuation)
+table = str.maketrans('','',string.punctuation)
 stripped = [w.translate(table) for w in words]
 print(stripped[:100])
 
